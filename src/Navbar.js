@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css'; 
 function Navbar() {
   return (
     <div style={{ display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', paddingRight: '10px' }}>

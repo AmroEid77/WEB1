@@ -1,0 +1,30 @@
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+  .logo-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  
+  .menu-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+    .navbar-container {
+      flex-direction: column;
+    }
+  
+    .menu-container {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
+  
