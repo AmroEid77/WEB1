@@ -1,13 +1,21 @@
 
 import './App.css';
-import NavbarSingleVideo from './components/NavbarSingleVideo';
+import NavbarSingleVideo from './components/NavbarSingleVideo/NavbarSingleVideo'
+import Footer from './components/Footer'
+import Trending from './components/Trending/Trending';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <NavbarSingleVideo/>
-    </div>
-  );
+
+    <>
+    <NavbarSingleVideo/>
+    <Trending/>
+    <Footer/>
+    </>
+
+  )
 }
 
 export default App;
