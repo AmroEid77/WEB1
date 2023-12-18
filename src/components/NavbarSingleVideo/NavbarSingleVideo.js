@@ -2,14 +2,16 @@ import React from "react";
 import "./NavbarSingleVideo.css";
 
 const NavbarSingleVideo = () => {
+
   return (
     <nav className="navbar navbar-expand-lg navbar-expand-xs bg-body-tertiary">
       <div className="container">
-        {/* Blue button */}
+
         <div className="d-flex">
           <button
             type="button"
             className="btn btn-primary "
+            title="updates"
             style={{ width: "2.5rem", height: "2.5rem" }}
           >
             <svg
@@ -19,6 +21,7 @@ const NavbarSingleVideo = () => {
               fill="currentColor"
               className="bi my-bi bi-megaphone-fill"
               viewBox="0 0 16 16"
+
             >
               <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25.222 25.222 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009a68.14 68.14 0 0 1 .496.008 64 64 0 0 1 1.51.048zm1.39 1.081c.285.021.569.047.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a65.81 65.81 0 0 1 1.692.064c.327.017.65.037.966.06z" />
             </svg>
@@ -27,9 +30,11 @@ const NavbarSingleVideo = () => {
 
         <div className="d-flex order-lg-2">
           <ul className="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
+
             <li className="nav-item chat">
               <button
                 className="btn chat"
+                title="chats"
                 style={{
                   backgroundColor: "#EEF0F2",
                   width: "2.5rem",
@@ -53,6 +58,7 @@ const NavbarSingleVideo = () => {
             <li className="nav-item settings">
               <button
                 className="btn settings"
+                title="settings"
                 style={{
                   backgroundColor: "#EEF0F2",
                   width: "2.5rem",
@@ -76,6 +82,7 @@ const NavbarSingleVideo = () => {
             <li className="nav-item notifications">
               <button
                 className="btn notifications"
+                title="notifications"
                 style={{
                   backgroundColor: "#EEF0F2",
                   width: "2.5rem",
@@ -112,7 +119,7 @@ const NavbarSingleVideo = () => {
                 }}
               >
                 <img
-                  src="https://i.seadn.io/gcs/files/3085b3fc65f00b28699b43efb4434eec.png?auto=format&dpr=1&w=1000"
+                  src="https://www.annahar.com/ContentFiles/160065Image1-1180x677_d.jpg?version=1907003%D8%B1%D8%A7%D8%A8%D8%B7"
                   alt="Profile"
                   style={{
                     width: "100%",
@@ -126,7 +133,7 @@ const NavbarSingleVideo = () => {
               </button>
             </li>
           </ul>
-          {/* Toggle button */}
+
           <button
             className="navbar-toggler shadow-none border-0 icon-md btn"
             type="button"
@@ -145,7 +152,7 @@ const NavbarSingleVideo = () => {
           className="collapse navbar-collapse pt-1 text-center"
           id="navbarSupportedContent"
         >
-          {/* search bar */}
+
           <form className="search-form mx-lg-2">
           <svg
               className="icon fs-4"
@@ -167,28 +174,25 @@ const NavbarSingleVideo = () => {
 
           <ul className="navbar-nav ms-auto ">
             <li className="nav-item dropdown demo mx-lg-2">
-              <a className="nav-link dropdown-toggle" href="#" role="button">
+              <a className="nav-link dropdown-toggle" href="#1" role="button">
                 Demo
               </a>
-             
             </li>
 
             <li className="nav-item dropdown pages mx-lg-2">
-              <a className="nav-link dropdown-toggle" href="#" role="button">
+              <a className="nav-link dropdown-toggle" href="#2" role="button">
                 Pages
               </a>
-              
             </li>
 
             <li className="nav-item dropdown account mx-lg-2">
-              <a className="nav-link dropdown-toggle" href="#" role="button">
+              <a className="nav-link dropdown-toggle" href="#3" role="button">
                 Account
               </a>
-             
             </li>
 
             <li className="nav-item network mx-lg-2">
-              <a className="nav-link" aria-current="#" href="#">
+              <a className="nav-link" href="#4">
                 My Network
               </a>
             </li>

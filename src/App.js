@@ -1,13 +1,16 @@
 
 import './App.css';
+
 import NavbarSingleVideo from './components/NavbarSingleVideo/NavbarSingleVideo'
-import Footer from './components/Footer'
 import Trending from './components/Trending/Trending';
+
+import Footer from './components/Footer/Footer.js';
 
 
 
 function App() {
   return (
+
 
     <>
     <NavbarSingleVideo/>
@@ -16,6 +19,7 @@ function App() {
     </>
 
   )
+
 }
 
 export default App;
