@@ -1,12 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Footer from './components/Footer.js';
-import Comment from './components/Comment.js'
+import Footer from './components/Footer/Footer.js';
+
+
 function App() {
   return (
     <div className="App">
       
-      <Comment/>
       <Footer/>
     </div>
   );
