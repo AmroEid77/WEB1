@@ -5,7 +5,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap') format('woff2'); /* Font source */
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap') format('woff2'); 
 }
 
 body {
