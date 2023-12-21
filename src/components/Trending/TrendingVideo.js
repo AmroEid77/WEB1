@@ -19,8 +19,8 @@ const TrendingVideo = (props) => {
               overflow: "hidden",
             }}
           />
+          
         </div>
-
         <div
           className="card-body d-flex flex-column fs-xs fs-lg-5"
           style={{ fontSize: "medium" }}
@@ -96,7 +96,8 @@ const TrendingVideo = (props) => {
         </div>
       </div>
     </div>
+
   );
 };
 
-export default TrendingVideo;
+export default TrendingVideo; 
