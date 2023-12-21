@@ -21,6 +21,7 @@ function App() {
       <NavbarSingleVideo/> 
       <Header/>
       <Trending/>
+      <Trailers/>
       <Footer/>
     </div>
   );
