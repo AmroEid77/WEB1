@@ -1,9 +1,8 @@
- 
 
 const Footer=()=>{
     return(
-        <footer className="bg-body-tertiary text-center text-lg-start">
-        <div className="container p-4">
+        <footer className="bg-body-tertiary text-center text-lg-start" >
+        <div className="container p-4" >
           <div className="row " style={{overflow:"hidden"}} >
             <div className="col-lg-8 col-md-12 mb-4 mb-md-0">
               <ul className="nav justify-content-center justify-content-lg-start">
