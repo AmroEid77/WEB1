@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Comment() {
+const Comment=()=> {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [repliesVisibility, setRepliesVisibility] = useState([]);
@@ -95,7 +95,7 @@ function Comment() {
     <section>
       <div className="container my-5 py-5">
         <div className="row justify-content-center">
-          <div className="col-lg-8">
+          <div className="col-lg-12">
             <div className="card">
               <div className="card-footer py-3 border-0" style={{ backgroundColor: '#f8f9fa' }}>
                 <div className="d-flex flex-start w-100 mb-3">
