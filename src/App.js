@@ -1,14 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import Footer from './components/Footer/Footer.js';
-import Navbar from './Navbar';
-import'./style.css'
+
+
+
+//import './App.css';
+import Footer from './components/FooterOne/Footer.js';
+import NavbarSingleVideo from './components/NavbarSingleVideo/NavbarSingleVideo.js';
+import Trending from './components/Trending/Trending.js';
+
+
 
 
 function App() {
   return (
+
     <div className="App">
-        <Navbar/>
+
+      <NavbarSingleVideo/>
+      <Trending/>
+
       <Footer/>
     </div>
   );
