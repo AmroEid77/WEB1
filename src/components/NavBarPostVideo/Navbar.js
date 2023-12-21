@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Navbar() {
   return (
     
-
+<div className="container">
 <div className="d-flex align-items-center p-3" style={{ backgroundColor: "#f8f9fa",marginTop:"0",marginBottom:"0" }}>
   <div className="col-md-6 d-flex gap-3 align-items-center">
     <div className="bg-primary rounded" style={{ width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -82,7 +82,7 @@ function Navbar() {
   </div>
   
       </div>
-   
+      </div>
 
   
   )}
