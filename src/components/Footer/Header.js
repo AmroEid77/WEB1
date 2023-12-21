@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useFireBase } from "../../FireBase/useFireBase.js";
+import Verified from "../Trailers/Verified.js";
 
 const Header = () => {
         
@@ -17,7 +18,7 @@ const Header = () => {
                                     <div className="col-lg-12 col-md-8 fw-bold text-start">
                                         <img src={info.profilePic} className="rounded-circle img-fluid pr-5" style={{ width: '30px', height: '30px' }}/>
                                         <p className="card-text d-inline-block mx-2">
-                                            {info.username} 
+                                            {info.username} {info.verification && <Verified />}
                                             &emsp;
                                             {info.views}
                                         </p>
@@ -25,7 +26,7 @@ const Header = () => {
                                         <p className="card-text fw-normal lead">
                                             {info.text}
                                         </p>
-                                        <button type="button" class="btn btn-primary btn-lg"><span><i className="bi bi-file-earmark-play"></i></span>  Watch now</button>
+                                        <button type="button" className="btn btn-primary btn-lg"><span><i className="bi bi-file-earmark-play"></i></span>  Watch now</button>
                                     </div>   
                                 </div>
                             </div>
