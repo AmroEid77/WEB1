@@ -1,0 +1,15 @@
+body {
+    padding-top: 20px; /* Add top padding to create space between the navbar and the top of the page */
+  }
+
+  .navbar {
+    background-color: #f8f9fa; /* Change the background color if needed */
+  }
+
+  .navbar-nav {
+    margin: 0 auto; /* Center the navbar items */
+  }
+
+  .nav-link {
+    margin: 0 10px; /* Add horizontal spacing between navbar items */
+  }
