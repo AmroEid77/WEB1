@@ -1,4 +1,4 @@
-
+ 
 
 const Footer=()=>{
     return(
@@ -27,8 +27,7 @@ const Footer=()=>{
           </div>
         </div>
       </footer>
-      
-
+    
     )
 }
 export default Footer

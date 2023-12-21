@@ -1,28 +1,21 @@
 
-import './App.css';
 
-import NavbarSingleVideo from './components/NavbarSingleVideo/NavbarSingleVideo'
-import Trending from './components/Trending/Trending';
-
-import Footer from './components/Footer/Footer.js';
-import Header from './components/Footer/Header.js';
+//import './App.css';
+import Footer from './components/FooterOne/Footer.js';
+import NavbarSingleVideo from './components/NavbarSingleVideo/NavbarSingleVideo.js';
+import Trending from './components/Trending/Trending.js';
 
 
 
 function App() {
   return (
 
-
-
-    <>
-    <NavbarSingleVideo/>
-    <Trending/>
-    <Footer/>
-    </>
-
-  )
-
-
+    <div className="App">
+      <NavbarSingleVideo/>
+      <Trending/>
+      <Footer/>
+    </div>
+  );
 }
 
 export default App;
