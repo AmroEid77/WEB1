@@ -94,7 +94,12 @@
       color: rgb(0, 42, 255); 
   }
   
-  
+  .link-hover:hover{
+    color:blue;
+  }
+  .link-hover{
+    text-decoration: none;
+  }
   
   
   

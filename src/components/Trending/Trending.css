@@ -4,3 +4,6 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+.trendingVideo:hover{
+    color: blue;
+}

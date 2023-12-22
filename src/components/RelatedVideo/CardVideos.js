@@ -31,7 +31,7 @@ const CardVideos = (props) => {
         </div>
 
         <div className='video-title-views'>
-          {/* Use white-space: nowrap to ensure the name is on a single line */}
+          
           <div className="card-title-container Relatedtitlee " style={{ display: 'flex', alignItems: 'center', whiteSpace: 'nowrap' }}>
             <img
               src={props.imge}

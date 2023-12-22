@@ -27,7 +27,7 @@ const Trailers = () => {
         <div className="container">
             <div className="d-flex justify-content-between">
                 <h5 className="fs-3 fw-bold d-inline-block ">Official Trailer</h5>
-                <a className="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" onClick={viewMoreButton}>{button}</a>
+                <a className="btn btn-primary fw-bold" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" onClick={viewMoreButton}>{button}</a>
             </div>
 
             <div className="row justify-content-center">

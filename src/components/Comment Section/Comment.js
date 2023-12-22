@@ -6,15 +6,15 @@ const Comment=(props)=> {
 
   const {items,updateData,addData} =useFireBase('Comment')
   
+  const [commentNumber,setCommentNumber]=useState(1)
 
   const itemData=items.filter((item)=>{
     return (item.videoID===props.videoID)
   })
-  
+  props.setCommnetNum(itemData.length)
   
   const [newComment, setNewComment] = useState('');
-  const [repliesVisibility, setRepliesVisibility] = useState([]);
-  const [replyIndex, setReplyIndex] = useState(null);
+  const [repliesVisibility, setRepliesVisibility] = useState(false);
 
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
@@ -29,21 +29,13 @@ const Comment=(props)=> {
           date: new Date().toLocaleDateString(),
           like: 0,
           photo:"https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
-          commentID:itemData.length+1,
+          commentID:items.length+1,
           videoID:props.videoID
         };
         setNewComment('')
         addData(e,formattedComment)
       }
     }
-  };
-
-
-
-  const toggleRepliesVisibility = (index) => {
-    const updatedVisibility = [...repliesVisibility];
-    updatedVisibility[index] = !updatedVisibility[index];
-    setRepliesVisibility(updatedVisibility);
   };
 
   const toggleLike = (index,numberLike) => {
@@ -56,10 +48,11 @@ const Comment=(props)=> {
   };
 
   const handleReplyInput = (index) => {
-    if (replyIndex === index) {
-      setReplyIndex(null);
+    if (!repliesVisibility) {
+      setRepliesVisibility(true);
+
     } else {
-      setReplyIndex(index);
+      setRepliesVisibility(false);
     }
   };
 
@@ -96,7 +89,7 @@ const Comment=(props)=> {
                   </div>
                 </div>
 
-                {itemData.map((comment, index) => (
+                {itemData.slice(0,commentNumber).map((comment, index) => (
                   <div key={index} className="card-body mb-3" style={{ background: '#eee', borderRadius: '10px' }}>
                     <div className="d-flex flex-start align-items-center">
                       <img
@@ -124,7 +117,8 @@ const Comment=(props)=> {
                       <span className="d-flex align-items-center me-3">&#8226;</span>
                       <button
                         className="btn d-flex align-items-center me-3"
-                        onClick={() => handleReplyInput(index)}
+                        
+                        onClick={() => handleReplyInput()}
                       >
                         <i className="far fa-comment-dots me-2" />
                         <p className="mb-0" style={{ color: 'black' }}>Reply</p>
@@ -132,7 +126,7 @@ const Comment=(props)=> {
                       <span className="d-flex align-items-center me-3">&#8226;</span>
                       <button
                         className="btn d-flex align-items-center me-3"
-                        onClick={() => toggleRepliesVisibility(index)}
+                        
                       >
                         <i className="fas fa-share me-2" />
                         <p className="mb-0" style={{ color: 'black' }}>
@@ -143,7 +137,20 @@ const Comment=(props)=> {
                   
                     <Reply commentID={comment.commentID} replyVisibility={repliesVisibility} />
                   </div>
+                  
                 ))}
+                <button
+                className="btn d-flex align-items-center me-3"
+                onClick={()=>{
+                  setCommentNumber(commentNumber+1)
+                }}
+                ><i className="bi bi-three-dots " style={{marginRight:"5px"}}></i>
+                  <p className="mb-0" style={{ color: 'black' }}>
+                  Load more comments
+                        </p>
+                  
+                
+                </button>
               </div>
             </div>
           </div>

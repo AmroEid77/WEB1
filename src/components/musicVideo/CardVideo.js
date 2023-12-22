@@ -82,7 +82,7 @@ const CardVideo = (props) => {
                         title={props.title}
                         href={props.dataVideo}
                         target="_blank" rel="noreferrer"
-                    >
+                        >
                         {props.title}
                     </a>
 

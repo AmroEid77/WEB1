@@ -16,10 +16,10 @@ const VideoPage = (props) => {
   return (
     <div className="container mt-5">
     <div className="row">
-
-      {console.log(props.id.ID)}
+        
         <Card
           key={props.id.ID}
+          ID={props.id.ID}
           dataVideo={items[props.id.ID].video}
           title={items[props.id.ID].title}
           views={items[props.id.ID].views}
@@ -27,11 +27,10 @@ const VideoPage = (props) => {
           publisher={items[props.id.ID].publisher}
           check={items[props.id.ID].verification}
           Views={items[props.id.ID].views}
+          like={items[props.id.ID].likes}
 
         />
-        <Comment 
-        videoID={props.id.ID}
-        />
+        
 
 
     </div>

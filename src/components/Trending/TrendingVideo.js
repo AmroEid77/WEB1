@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./Trending.css";
+
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
+import "./Trending.css";
 
 
 const TrendingVideo = (props) => {
