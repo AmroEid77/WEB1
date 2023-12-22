@@ -11,8 +11,9 @@ function App() {
     <BrowserRouter>
     <Routes>   
       <Route path="/HomeVideo" element={<HomeVideo/>}/>   
-      <Route path="/SingleVideoPage" element={<SingleVideoPage/>}/>   
+      <Route path="/SingleVideoPage/:ID" element={<SingleVideoPage/>}/>   
       <Route index element={<HomeVideo/>} />  
+      
     </Routes> 
     </BrowserRouter>
   );
