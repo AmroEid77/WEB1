@@ -1,0 +1,120 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .card-body  {
+    padding: 15px;
+  }
+  
+  .player-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+  }
+  
+  .card-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  .card-title{
+  text-decoration-line: none;  
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  margin-top: 20px;
+  }
+  
+  .bi-bi-three-dots {
+    float: right;
+    cursor: pointer;
+    margin-right: 11.5px;
+    margin-top: -41.5px;
+  }
+  
+  .check {
+    color: green;
+  }
+  
+  .personalInformation {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: -10px;
+  }
+  
+  .personalInformation img {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .personalName {
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footerOfVideo {
+    padding-top: 10px;
+  }
+  
+  .buttonSeet {
+    display: flex;
+  }
+  
+  .Liked button, .Comments button, .Views button, .Share button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #545454;
+    padding: 5px 10px;
+    align-items: center;
+    font-size: 14px;
+    
+  }
+  
+  
+  .Liked-button svg , .Comments button svg , .Views button svg, .Share button svg{
+      margin-right: 8px;
+      transition: fill 0.3s; 
+  }
+    
+  .Liked-button.liked {
+      color: rgb(0, 42, 255); 
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .btn 
+  ,.Duration {
+    width: 50px;
+    height: 20px; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+  
+  }
+  
+  .card-title{
+    font-size: 16px;
+  }
