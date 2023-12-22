@@ -11,6 +11,10 @@ import NavbarSingleVideo from './components/NavbarSingleVideo/NavbarSingleVideo.
 import Trailers from './components/Trailers/Trailers.js';
 import Trending from './components/Trending/Trending.js';
 
+import Musicc from './Musicc'
+
+
+import RelateVideo from './components/RelatedVideo/CardVideos.js';
 
 
 
@@ -23,6 +27,10 @@ function App() {
       <Trending/>
       <Trailers/>
       <Footer/>
+      
+      <Musicc/>
+      
+     <RelateVideo/>
     </div>
   );
 }
