@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import Comment from '../Comment Section/Comment'
 import { useFireBase } from '../../FireBase/useFireBase';
 
 const VideoPage = () => {
@@ -15,6 +16,7 @@ const VideoPage = () => {
     <div className="container">
     <div className="row">
       {items.slice(0,1).map((item, index) => (
+        <>
         <Card
           key={index}
           dataVideo={item.video}
@@ -26,6 +28,10 @@ const VideoPage = () => {
           Views={item.views}
 
         />
+        <Comment 
+        videoID={item.ID}
+        />
+        </>
       ))}
     </div>
     </div>

@@ -36,7 +36,7 @@ const Card = (props) => {
 
             <p className="title">
 
-              <a className="card-title" 
+              <a className="card-title musicTitle" 
                 href={props.dataVideo} 
                 title={props.title} 
                 target="-blank"

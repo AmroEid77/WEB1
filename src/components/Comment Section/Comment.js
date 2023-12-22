@@ -1,47 +1,44 @@
 import React, { useState } from 'react';
+import { useFireBase } from '../../FireBase/useFireBase';
+import Reply from './Reply';
 
-const Comment=()=> {
-  const [comments, setComments] = useState([]);
+const Comment=(props)=> {
+
+  const {items,updateData,addData} =useFireBase('Comment')
+  
+
+  const itemData=items.filter((item)=>{
+    return (item.videoID===props.videoID)
+  })
+  
+  
   const [newComment, setNewComment] = useState('');
   const [repliesVisibility, setRepliesVisibility] = useState([]);
-  const [likes, setLikes] = useState([]);
-  const [replyText, setReplyText] = useState('');
   const [replyIndex, setReplyIndex] = useState(null);
 
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
   };
-
-  const handlePostComment = (e) => {
+  
+  const handlePostComment = (e,id) => {
     if (e.key === 'Enter') {
       if (newComment.trim() !== '') {
         const formattedComment = {
           name: 'Amro',
           text: newComment,
           date: new Date().toLocaleDateString(),
-          replies: [],
-          likes: 0,
+          like: 0,
+          photo:"https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
+          commentID:itemData.length+1,
+          videoID:props.videoID
         };
-        setComments([...comments, formattedComment]);
-        setRepliesVisibility([...repliesVisibility, false]);
-        setLikes([...likes, false]);
-        setNewComment('');
+        setNewComment('')
+        addData(e,formattedComment)
       }
     }
   };
 
-  const handleReply = (index) => (replyText) => {
-    if (replyText.trim() !== '') {
-      const updatedComments = [...comments];
-      updatedComments[index].replies = updatedComments[index].replies || [];
-      updatedComments[index].replies.push({
-        name: 'Amro',
-        text: replyText,
-        date: new Date().toLocaleDateString(),
-      });
-      setComments(updatedComments);
-    }
-  };
+
 
   const toggleRepliesVisibility = (index) => {
     const updatedVisibility = [...repliesVisibility];
@@ -49,23 +46,10 @@ const Comment=()=> {
     setRepliesVisibility(updatedVisibility);
   };
 
-  const toggleLike = (index) => {
-    const updatedLikes = [...likes];
-    updatedLikes[index] = !updatedLikes[index];
-    setLikes(updatedLikes);
-
-    const updatedComments = [...comments];
-    if (updatedLikes[index]) {
-      updatedComments[index].likes += 1;
-    } else {
-      updatedComments[index].likes -= 1;
-    }
-    setComments(updatedComments);
+  const toggleLike = (index,numberLike) => {
+    updateData(index,"like",numberLike+1)
   };
 
-  const countLikes = (comment) => {
-    return comment.likes;
-  };
 
   const countReplies = (comment) => {
     return comment.replies ? comment.replies.length : 0;
@@ -79,29 +63,21 @@ const Comment=()=> {
     }
   };
 
-  const handleReplyChange = (event) => {
-    setReplyText(event.target.value);
-  };
 
-  const handlePostReply = (index) => (e) => {
-    if (e.key === 'Enter' && replyText.trim() !== '') {
-      handleReply(index)(replyText);
-      setReplyText('');
-      setReplyIndex(null);
-    }
-  };
+
+  
 
   return (
     <section>
-      <div className="container my-5 py-5">
+      <div className="container my-5 ">
         <div className="row justify-content-center">
           <div className="col-lg-12">
             <div className="card">
               <div className="card-footer py-3 border-0" style={{ backgroundColor: '#f8f9fa' }}>
                 <div className="d-flex flex-start w-100 mb-3">
                   <img
-                    className="rounded-circle shadow-1-strong me-3"
-                    src="https://media.istockphoto.com/id/1298261537/vector/blank-man-profile-head-icon-placeholder.jpg?s=612x612&w=0&k=20&c=CeT1RVWZzQDay4t54ookMaFsdi7ZHVFg2Y5v7hxigCA="
+                    className="rounded-circle shadow-1-strong me-3" style={{objectFit:"cover"}}
+                    src="https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg"
                     alt="avatar"
                     width={40}
                     height={40}
@@ -120,12 +96,12 @@ const Comment=()=> {
                   </div>
                 </div>
 
-                {comments.map((comment, index) => (
+                {itemData.map((comment, index) => (
                   <div key={index} className="card-body mb-3" style={{ background: '#eee', borderRadius: '10px' }}>
                     <div className="d-flex flex-start align-items-center">
                       <img
-                        className="rounded-circle shadow-1-strong me-3"
-                        src="https://media.istockphoto.com/id/1298261537/vector/blank-man-profile-head-icon-placeholder.jpg?s=612x612&w=0&k=20&c=CeT1RVWZzQDay4t54ookMaFsdi7ZHVFg2Y5v7hxigCA="
+                        className="rounded-circle shadow-1-strong me-3 " style={{objectFit:"cover"}}
+                        src={comment.photo}
                         alt="avatar"
                         width={60}
                         height={60}
@@ -139,11 +115,11 @@ const Comment=()=> {
                       <a
                         href="#!"
                         className="d-flex align-items-center me-3"
-                        onClick={() => toggleLike(index)}
+                        onClick={() => toggleLike(comment.id,comment.like)}
                         style={{ color: 'black', textDecoration: 'none' }}
                       >
                         <i className="far fa-thumbs-up me-2" />
-                        <p className="mb-0">Like ({countLikes(comment)})</p>
+                        <p className="mb-0">Like ({comment.like})</p>
                       </a>
                       <span className="d-flex align-items-center me-3">&#8226;</span>
                       <button
@@ -164,40 +140,8 @@ const Comment=()=> {
                         </p>
                       </button>
                     </div>
-                    {replyIndex === index && (
-                      <div className="mt-3">
-                        <textarea
-                          className="form-control"
-                          placeholder="Write a reply..."
-                          rows={2}
-                          style={{ background: '#eee', width: '100%' }}
-                          value={replyText}
-                          onChange={handleReplyChange}
-                          onKeyDown={handlePostReply(index)}
-                        />
-                      </div>
-                    )}
-                    {repliesVisibility[index] && comment.replies && (
-                      <div className="ms-5">
-                        {comment.replies.map((reply, replyIndex) => (
-                          <div key={replyIndex} className="card-body">
-                            <div className="d-flex flex-start align-items-center">
-                              <img
-                                className="rounded-circle shadow-1-strong me-3"
-                                src="https://media.istockphoto.com/id/1298261537/vector/blank-man-profile-head-icon-placeholder.jpg?s=612x612&w=0&k=20&c=CeT1RVWZzQDay4t54ookMaFsdi7ZHVFg2Y5v7hxigCA="
-                                alt="avatar"
-                                width={60}
-                                height={60}
-                              />
-                              <div>
-                                <h6 className="fw-bold mb-1">{reply.name}</h6>
-                              </div>
-                            </div>
-                            <p className="mt-3 mb-4 pb-2" style={{ textAlign: "start", paddingLeft: "76px" }}>{reply.text}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                  
+                    <Reply commentID={comment.commentID} replyVisibility={repliesVisibility} />
                   </div>
                 ))}
               </div>

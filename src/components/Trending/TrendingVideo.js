@@ -1,6 +1,7 @@
 import React from "react";
 import "./Trending.css";
 import ReactPlayer from "react-player";
+import { Link } from "react-router-dom";
 
 const TrendingVideo = (props) => {
   return (
@@ -25,7 +26,8 @@ const TrendingVideo = (props) => {
           className="card-body d-flex flex-column fs-xs fs-lg-5"
           style={{ fontSize: "medium" }}
         >
-          <a
+          <Link
+            to="SingleVideoPage"
             className="card-title trendingVideo fs-small fs-lg-5 fw-bold"
             title={props.title}
             style={{
@@ -37,7 +39,7 @@ const TrendingVideo = (props) => {
             }}
           >
             {props.title}
-          </a>
+          </Link>
 
           <div className="mt-auto">
             <div className="publisher d-flex align-items-center">

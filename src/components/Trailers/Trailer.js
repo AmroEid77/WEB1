@@ -27,9 +27,9 @@ const Trailer = ({data}) => {
             
         // Cleanup Plyr instance on component unmount
         return () => { 
-          if (player && typeof player.destroy === 'function') {
+        if (player && typeof player.destroy === 'function') {
             player.destroy();
-          }
+        }
         };
 
     }}, [data.videoId]); 
@@ -53,5 +53,5 @@ const Trailer = ({data}) => {
         </div>
     );
 } 
-
+    
 export default Trailer;

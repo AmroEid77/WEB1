@@ -1,8 +1,9 @@
-import CardVideo from './Components/CardVideo';
-import { useFireBase } from './useFireBase';
-import React from 'react';
 
-const Musicc = () => {
+import { useFireBase } from '../../FireBase/useFireBase';
+import React from 'react';
+import CardVideos from './CardVideos';
+
+const RelatedVideo = () => {
   const { items } = useFireBase('Task');
 
   return (
@@ -12,7 +13,7 @@ const Musicc = () => {
      
         {items.map((video) => (
           
-          <CardVideo
+          <CardVideos
           
             desc={video.desc}
             img={video.img}
@@ -20,7 +21,7 @@ const Musicc = () => {
             imge={video.imge}
             time={video.time}
             times={video.times}
-           videoID={video.videoID}
+            videoID={video.videoID}
             views={video.views}
             
           />
@@ -30,4 +31,4 @@ const Musicc = () => {
   );
 };
 
-export default Musicc;
+export default RelatedVideo;

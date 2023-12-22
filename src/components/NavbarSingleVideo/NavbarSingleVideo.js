@@ -155,7 +155,7 @@ const NavbarSingleVideo = () => {
 
           <form className="search-form mx-lg-2">
           <svg
-              className="icon fs-4"
+              className=" fs-4 searchIcon"
               xmlns="http://www.w3.org/2000/svg"
               width={30}
               height={30}

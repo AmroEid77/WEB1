@@ -6,18 +6,18 @@ const CardVideo = (props) => {
     const [liked, setLiked] = useState(false);
 
     const handleLikeClick = () => {
-      setLiked(!liked);
+    setLiked(!liked);
     };
 
-  return (
-
-    <div className="col-xl-2 col-lg-4 col-md-6 col-sm-6 mb-2 p-2" >
+return (
+    
+    <div className=" col-lg-2 col-md-6 col-sm-6 mb-2 p-2">
         
         <div className="card v-100 h-100 " 
             style={{ borderRadius: '15px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
 
             <div className="ratio ratio-16x9" 
-                style={{ borderRadius: '15px 15px 0 0', overflow: 'hidden' }} > 
+                style={{ borderRadius: '15px 15px 0 0', overflow: 'hidden'  }} > 
 
                 <ReactPlayer
                     url={props.dataVideo}

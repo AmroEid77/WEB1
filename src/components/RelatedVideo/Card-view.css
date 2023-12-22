@@ -1,4 +1,4 @@
-.card {
+.TT {
     display: flex;
     flex-direction:column;
     width: 350px;
@@ -16,14 +16,8 @@
     margin: 16px;
   }
   
-  .card:hover {
-    /* transform: translateY(-10px); */
-    box-shadow: 0px 20px 20px rgb(0 0 0 / 25%), -4px -4px 12px rgb(0 0 0 / 47%)
-  }
   
-  
-  
-  .card-image-container {
+  .RelatedImage {
     width: 100%;
     height: 78%;
    
@@ -48,7 +42,7 @@
     font-size: 40px;
   }
   
-  .card-title {
+  .Relatedtitlee {
     margin: 0;
     font-size: 18px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -59,7 +53,7 @@
     overflow: hidden;
   }
   
-  .card-des {
+  .RelatedDes {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -71,7 +65,7 @@
     font-weight: 900;
   }
   
-  .card-btn {
+  .RelatedBtn {
     font-size: 15px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     color: #fff;
@@ -95,7 +89,7 @@
     
   }
   
-  .card-btn:hover {
+  .RelatedBtn:hover {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.06);
     width: 40%;
     border-radius: 8px;
@@ -104,14 +98,14 @@
     padding: 0;
   }
   
-  .card-btn-text {
+  .RelatedBtnText {
     opacity: 0;
     font-size: 1px;
     font-weight: 500;
     transition: all ease-in-out 0.5s;
   }
   
-  .card-btn:hover > .card-btn-text {
+  .RelatedBtn:hover > .RelatedBtnText {
     opacity: 1;
     font-size: 15px;
   }

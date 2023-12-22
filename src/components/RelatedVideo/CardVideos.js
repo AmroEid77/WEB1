@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
   import './Card-view.css'
-const CardVideo = (props) => {
+const CardVideos = (props) => {
   const { playVideo } = props;
 
   // Check if there is an image
@@ -15,8 +15,8 @@ const CardVideo = (props) => {
 
   return (
     <div className="related-videos">  
-      <div className="card row-md-3 mx-3 my-3">
-        <div className="card-image-container" id={props.videoID} onClick={() => playVideo(props.videoID)}>
+      <div className="card TT row-md-3 mx-3 my-3">
+        <div className="card-image-container RelatedImage" id={props.videoID} onClick={() => playVideo(props.videoID)}>
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${props.videoID}`}
             playing={false}
@@ -32,7 +32,7 @@ const CardVideo = (props) => {
 
         <div className='video-title-views'>
           {/* Use white-space: nowrap to ensure the name is on a single line */}
-          <div className="card-title-container" style={{ display: 'flex', alignItems: 'center', whiteSpace: 'nowrap' }}>
+          <div className="card-title-container Relatedtitlee " style={{ display: 'flex', alignItems: 'center', whiteSpace: 'nowrap' }}>
             <img
               src={props.imge}
               alt={props.names}
@@ -56,7 +56,7 @@ const CardVideo = (props) => {
         </div>
 
         <div className="card-description">
-          <p className="card-des">{props.desc}</p>
+          <p className="card-des RelatedDes">{props.desc}</p>
         </div>
 
         <div className='timeDesc'>
@@ -65,11 +65,11 @@ const CardVideo = (props) => {
         </div>
         
         <div className='button-des'>
-          <button className="card-btn" onClick={() => playVideo(props.videoID)}>
+          <button className="card-btn RelatedBtn" onClick={() => playVideo(props.videoID)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 384 512" strokeWidth="0" fill="currentColor" stroke="currentColor">
               <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path>
             </svg>
-            <span className="card-btn-text">Watch Video</span>
+            <span className="card-btn-text RelatedBtnText">Watch Video</span>
           </button>
           <button className='Open-btn' onClick={() => openYouTubeVideo(props.videoID)}>
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
@@ -82,4 +82,4 @@ const CardVideo = (props) => {
   );
 };
 
-export default CardVideo;
+export default CardVideos;

@@ -31,13 +31,14 @@ const Trending = () => {
             <button
               type="button"
               className="btn view-more-trending btn-primary fw-bold"
+              
               onClick={viewMoreButton}
             >
               {button}
             </button>
           </div>
         </div>
-        <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 p-3 justify-content-center">
+        <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 p-3 justify-content-center " >
           {
             items.slice(0,vids).map((item)=>{
               return(

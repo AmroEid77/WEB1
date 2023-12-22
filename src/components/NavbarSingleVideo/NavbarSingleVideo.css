@@ -29,7 +29,7 @@
   box-shadow: 0 0 0 4px rgba(89, 76, 234, 0.1);
 }
 
-.icon {
+.searchIcon {
   position: absolute;
   left: 1rem;
   fill: #8a9cf4;

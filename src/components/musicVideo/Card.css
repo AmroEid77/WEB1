@@ -1,8 +1,4 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-  }
+
   
   .card {
     background-color: white;
@@ -27,7 +23,7 @@ body, html {
   }
   
   
-  .card-title{
+  .musicTitle{
   text-decoration-line: none;  
   display: flex;
   font-size: 24px;
@@ -105,8 +101,7 @@ body, html {
   
   
   
-  .btn 
-  ,.Duration {
+  .Duration {
     width: 50px;
     height: 20px; 
     display: inline-flex; 
