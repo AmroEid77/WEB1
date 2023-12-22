@@ -38,11 +38,11 @@ const Trending = () => {
             </button>
           </div>
         </div>
-        <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 p-3 justify-content-center " >
+        <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 p-3" >
           {
             items.slice(0,vids).map((item)=>{
               return(
-                <TrendingVideo key={item.id} video={item.video} publisher={item.publisher} title={item.title} views={item.views} verification={item.verification} img={item.pImage} ></TrendingVideo>
+                <TrendingVideo key={item.id} video={item.video} publisher={item.publisher} title={item.title} views={item.views} verification={item.verification} img={item.pImage} duration={item.duration} ID={item.ID} ></TrendingVideo>
               ) 
             }
                   )

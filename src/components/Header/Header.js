@@ -22,7 +22,7 @@ const Header = () => {
                                             &emsp;
                                             {info.views}
                                         </p>
-                                        <h1 className="card-title">{info.title}</h1>
+                                        <h1 className="card-title fs-3">{info.title}</h1>
                                         <p className="card-text fw-normal lead">
                                             {info.text}
                                         </p>

@@ -4,7 +4,3 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
-.card:focus, card:hover{
-    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
-}
