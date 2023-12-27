@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import Plyr from "plyr/src/js/plyr";
 import Verified from "./Verified";
 import './/Trailer.css'
+import { Link } from "react-router-dom";
 const Trailer = ({data}) => {
 
     const playerRef = useRef(null);
@@ -41,12 +42,16 @@ const Trailer = ({data}) => {
                 <div ref={playerRef} id="player" data-plyr-provider="youtube" data-plyr-embed-id={data.videoId}></div>
             </div> 
             <div className="card-body text-start"> 
-                <h6 className="fw-bold trailerTitle">{data.title}</h6>
+
+                <Link to={`/SingleVideoPage/trailers/${data.ID}`} className="fw-bold trailerTitle" style={{textDecoration: 'none', cursor: 'pointer'}}>
+                    {data.title}
+                </Link>
+                
                 <div className="d-flex align-items-center">
-                    <img src={data.picture} className="rounded-circle img-fluid mb-4" style={{ width: '30px', height: '30px' }}/>
+                    <img src={data.pImage} className="rounded-circle img-fluid mb-4" style={{ width: '30px', height: '30px' }}/>
                     <h6 className="mx-2 fw-bold">
-                        {data.username} {data.verification && <Verified />}
-                        <p className="fw-normal text-muted my-1">{data.views}</p> 
+                        {data.publisher} {data.verification && <Verified />}
+                        <p className="fw-normal text-muted my-1">{data.views} views</p> 
                     </h6> 
                 </div>  
             </div>
