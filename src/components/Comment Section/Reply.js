@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useFireBase } from '../../FireBase/useFireBase';
 
 const Reply = (props) => {
-    const { items, updateData, addData } = useFireBase('Reply');
+    const { items, addData } = useFireBase('Reply');
     const itemData = items.filter((item) => {
         return item.commentID === props.commentID;
     });

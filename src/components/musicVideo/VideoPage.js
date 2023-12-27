@@ -5,8 +5,9 @@ import Comment from '../Comment Section/Comment'
 import { useFireBase } from '../../FireBase/useFireBase';
 
 const VideoPage = (props) => {
+{console.log(props.id.ID)}
 
-  const { items } = useFireBase('trending');
+  const { items } = useFireBase(props.id.Collectionname);
 
   if (!items || items.length === 0) {
 

@@ -69,7 +69,7 @@ const TrendingVideo = (props) => {
           fontSize:
             "medium"
         }}>
-          <Link to={`/SingleVideoPage/${props.ID}`} className="card-title trendingVideo fs-small fs-lg-5 fw-bold" title={props.title}
+          <Link to={`/SingleVideoPage/trending/${props.ID}`} className="card-title trendingVideo fs-small fs-lg-5 fw-bold" title={props.title}
             style={{
               wordBreak: "break-word", textOverflow: "ellipsis", lineHeight:
                 "1.2", cursor: "pointer", textDecoration: "none",
