@@ -1,3 +1,7 @@
 .trailerTitle:hover{
     color:blue;
 }
+
+.trailerTitle {
+    color: black;
+}
