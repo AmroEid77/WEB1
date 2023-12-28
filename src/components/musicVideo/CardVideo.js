@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player'
 
+
 const CardVideo = (props) => {
 
+    const [play, setPlay] = useState(false);
     const [liked, setLiked] = useState(false);
 
     const handleLikeClick = () => {
         setLiked(!liked);
     };
+    const handlePlay = () => {
+        setPlay(!play);
+      };
 
     return (
 
@@ -19,58 +24,91 @@ const CardVideo = (props) => {
                 <div className="ratio ratio-16x9"
                     style={{ borderRadius: '15px 15px 0 0', overflow: 'hidden' }} >
 
+
+                    {play && (
+
                     <ReactPlayer
                         url={props.dataVideo}
                         light={true}
-                        playing={false}
+                        playIcon playing={play}
                         controls
                         width="100%"
                         height="100%"
                     />
+                    
+                    )} {!play && (
+                        <>
+                          
+                            <div className="thumbnail">
+                                
+                                <ReactPlayer
+                                    url={props.dataVideo}
+                                    light={true}
+                                    playIcon playing={play}
+                                    controls
+                                    width="100%"
+                                    height="100%"
+                                    
+                                />
+                                
 
-                </div>
+                                <div className="playvideo" 
+                               style={{ position: "absolute", opacity: 0, top: 28 ,left: 72 }}>
 
+                                        <button className="btn btn-outline-dark" 
+                                        onClick={handlePlay} 
+                                        style={{ }}>
+                                            &nbsp;
+                                        </button>
+                                </div>
 
-                <div className="like-Duration" style={{ position: 'relative' }}>
+                                <div className="like-Duration" style={{position: 'relative'}}>  
 
-                    <span className="Duration position-absolute" style={{
-                        bottom: "10px",
-                        left: "10px",
-                        background: 'rgba(0, 0, 0, 0.5)',
-                        color: 'white',
-                        padding: '1px 6px',
-                        fontSize: '1.1rem',
-                        borderRadius: '10px'
+                                    <span className="Duration position-absolute" style={{
+                                        bottom: "10px", 
+                                        left: "10px", 
+                                        background: 'rgba(0, 0, 0, 0.5)',
+                                        color: 'white',
+                                        padding: '1px 6px',
+                                        fontSize: '1.1rem',
+                                        borderRadius: '10px'
 
-                    }}>
-                        {props.videoDuration}
-                    </span>
+                                    }}>
+                                        {props.videoDuration}
+                                    </span>
 
+                                        
+                                    <button
+                                        className={`btn position-absolute ${liked ? 'liked' : ''}`}
+                                        
+                                        style={{
+                                        bottom: "10px", 
+                                        right: "10px", 
+                                        background: 'rgba(0, 0, 0, 0.5)',
+                                        color: 'white',
+                                        padding: '1px 6px',
+                                        fontSize: '1.1rem',
+                                        borderRadius: '10px'
+                                    }}onClick={handleLikeClick}
+                                    >
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="16" 
+                                            height="16" 
+                                            fill={liked ? "red" : "currentColor"} 
+                                            className="bi bi-heart-fill" 
+                                            viewBox="0 0 16 16"
+                                            >
+                                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                        </svg>
+                                    </button>
+                                        
+                                </div>  
 
-                    <button
-                        className={`btn position-absolute ${liked ? 'liked' : ''}`}
-                        onClick={handleLikeClick}
-                        style={{
-                            bottom: "10px",
-                            right: "10px",
-                            background: 'rgba(0, 0, 0, 0.5)',
-                            color: 'white',
-                            padding: '1px 6px',
-                            fontSize: '1.1rem',
-                            borderRadius: '10px'
-                        }}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill={liked ? "red" : "currentColor"}
-                            className="bi bi-heart-fill"
-                            viewBox="0 0 16 16"
-                        >
-                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
-                        </svg>
-                    </button>
+                            </div>
+                        </>
+
+                    )}  
 
                 </div>
 
